@@ -69,9 +69,9 @@ module.exports = configure(function (ctx) {
 
       // https://v2.quasar.dev/quasar-cli-webpack/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-      
+
       chainWebpack (/* chain */) {}
-      
+
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-devServer
@@ -85,20 +85,111 @@ module.exports = configure(function (ctx) {
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-framework
     framework: {
+      components: [
+        'QLayout',
+        'QHeader',
+        'QDrawer',
+        'QPageContainer',
+        'QPage',
+        'QToolbar',
+        'QToolbarTitle',
+        'QBtn',
+        'QIcon',
+        'QList',
+        'QItem',
+        'QItemSection',
+        'QItemLabel',
+        'QCard',
+        'QImg',
+        'QAvatar',
+        'QInput',
+        'QCheckbox',
+        'QChatMessage',
+        'QForm',
+        'QPagination',
+        'QCarousel',
+        'QCarouselControl',
+        'QCarouselSlide',
+        'QTabPanels',
+        'QTabPanel',
+        'QStepper',
+        'QStep',
+        'QStepperNavigation',
+        'QSelect',
+        'QChip',
+        'QBtnToggle',
+        'QLinearProgress',
+        'QFooter',
+        'QExpansionItem',
+        'QTable',
+        'QTh',
+        'QTr',
+        'QTd',
+        'QSplitter',
+        'QBanner',
+        'QToggle',
+        'QCardSection',
+        'QBadge',
+        'QSeparator',
+        'QBtnDropdown',
+        'QDialog',
+        'QTooltip',
+        'QCardActions',
+        'QField',
+        'QSpace',
+        'QTabs',
+        'QBreadcrumbs',
+        'QBreadcrumbsEl',
+        'QTab',
+        'QPageScroller',
+        'QPageSticky',
+        'QScrollArea',
+        'QFab',
+        'QFabAction',
+        'QBtnGroup',
+        'QResizeObserver',
+        'QBar',
+        'QEditor',
+        'QDate',
+        'QTree',
+        'QPopupProxy',
+        'QMenu',
+        'QSpinner',
+        'QSpinnerGears',
+        'QUploader',
+        'QUploaderAddTrigger',
+        'QOptionGroup',
+        'QSpinnerAudio',
+        'QSpinnerRadio',
+        'QSpinnerIos',
+        'QSpinnerOval',
+        'QRadio',
+        'QSpinnerHourglass',
+        'QTimeline',
+        'QTimelineEntry',
+        'QFile',
+        'QTime',
+        'QSlider',
+        'QInnerLoading',
+        'QCircularProgress',
+      ],
+
       config: {},
 
       // iconSet: 'material-icons', // Quasar icon set
-      // lang: 'en-US', // Quasar language pack
+      // lang: 'fp', // Quasar language pack
 
       // For special cases outside of where the auto-import strategy can have an impact
       // (like functional components as one of the examples),
       // you can manually specify Quasar components/directives to be available everywhere:
       //
-      // components: [],
-      // directives: [],
+      directives: [
+        'Ripple',
+        'ClosePopup'
+      ],
 
       // Quasar plugins
-      plugins: []
+      plugins: ['Notify', 'Cookies', 'AppFullscreen','Dialog','Loading'],
     },
 
     // animations: 'all', // --- includes all animations
@@ -118,9 +209,9 @@ module.exports = configure(function (ctx) {
       maxAge: 1000 * 60 * 60 * 24 * 30,
         // Tell browser when a file from the server should expire from cache (in ms)
 
-      
+
       chainWebpackWebserver (/* chain */) {},
-      
+
 
       middlewares: [
         ctx.prod ? 'compression' : '',
@@ -135,9 +226,9 @@ module.exports = configure(function (ctx) {
 
       // for the custom service worker ONLY (/src-pwa/custom-service-worker.[js|ts])
       // if using workbox in InjectManifest mode
-      
+
       chainWebpackCustomSW (/* chain */) {},
-      
+
 
       manifest: {
         name: `Quasar App`,
@@ -211,13 +302,13 @@ module.exports = configure(function (ctx) {
       },
 
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-      
-      chainWebpackMain (/* chain */) {},
-      
 
-      
+      chainWebpackMain (/* chain */) {},
+
+
+
       chainWebpackPreload (/* chain */) {},
-      
+
     }
   }
 });
